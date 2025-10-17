@@ -8,14 +8,25 @@ class OnBoardingWidgetBody extends StatelessWidget {
   final PageController _controller = PageController();
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return SizedBox(
+      height: 500,
       child: PageView.builder(
+        physics: BouncingScrollPhysics(),
         controller: _controller,
         itemCount: 3,
         itemBuilder: (context, index) {
           return Column(
             children: [
-              Image.asset(Assets.assetsImagesOnboarding1),
+              Container(
+                height: 290,
+                width: 343,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(Assets.assetsImagesOnboarding1),
+                    fit: BoxFit.fill,
+                  ),
+                ),
+              ),
               SizedBox(height: 24),
               CustomSmoothPageIndicator(controller: _controller),
               SizedBox(height: 32),
@@ -24,6 +35,8 @@ class OnBoardingWidgetBody extends StatelessWidget {
                 style: CustomTextStyles.poppins500style24.copyWith(
                   fontWeight: FontWeight.bold,
                 ),
+                maxLines: 2,
+                overflow: TextOverflow.ellipsis,
                 textAlign: TextAlign.center,
               ),
               SizedBox(height: 16),

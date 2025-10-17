@@ -13,7 +13,7 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    delayedNavigate();
+    delayedNavigate(context);
     super.initState();
   }
 
@@ -29,9 +29,10 @@ class _SplashViewState extends State<SplashView> {
     );
   }
 
-  void delayedNavigate() {
+ 
+}
+ void delayedNavigate( context) {
     Future.delayed(Duration(seconds: 2), () {
-       customNavigate(context, '/onBoarding');
+       customReplacementNavigate(context, '/onBoarding');
     });
   }
-}
