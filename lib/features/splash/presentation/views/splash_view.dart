@@ -31,7 +31,7 @@ class _SplashViewState extends State<SplashView> {
 
   void delayedNavigate() {
     Future.delayed(Duration(seconds: 2), () {
-      customNavigate(context, '/onBoarding');
+       customNavigate(context, '/onBoarding');
     });
   }
 }
