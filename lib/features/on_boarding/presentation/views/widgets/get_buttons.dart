@@ -3,34 +3,36 @@ import 'package:dalel/core/utils/app_string.dart';
 import 'package:dalel/core/utils/app_text_styles.dart';
 import 'package:dalel/core/widgets/custom_btn.dart';
 import 'package:dalel/features/on_boarding/data/models/on_boarding_model.dart';
+import 'package:dalel/features/on_boarding/presentation/functions/on_boarding.dart';
 import 'package:flutter/material.dart';
 
 class GetButtons extends StatelessWidget {
-  const GetButtons(
-      {super.key, required this.currentIndex, required this.controller});
+  const GetButtons({
+    super.key,
+    required this.currentIndex,
+    required this.controller,
+  });
   final int currentIndex;
   final PageController controller;
   @override
   Widget build(BuildContext context) {
     if (currentIndex == onBoardingData.length - 1) {
-     
-    //  !Last onBoarding
+      //  !Last onBoarding
       return Column(
         children: [
-
           // !signUp button
           CustomBtn(
             text: AppStrings.createAccount,
             onPressed: () {
-              // onBoardingVisited();
+              onBoardingVisited();
               customReplacementNavigate(context, "/signUp");
             },
           ),
           const SizedBox(height: 16),
-        //  !login button
+          //  !login button
           GestureDetector(
             onTap: () {
-              // onBoardingVisited();
+              onBoardingVisited();
               customReplacementNavigate(context, "/signIn");
             },
             child: Text(

@@ -1,4 +1,5 @@
 import 'package:dalel/core/functions/navigation.dart';
+import 'package:dalel/features/on_boarding/presentation/functions/on_boarding.dart';
 import 'package:dalel/features/on_boarding/presentation/views/widgets/custom_nav_bar.dart';
 import 'package:dalel/features/on_boarding/presentation/views/widgets/get_buttons.dart';
 import 'package:dalel/features/on_boarding/presentation/views/widgets/on_boarding_widget_body.dart';
@@ -28,7 +29,7 @@ class _OnBoardingViewState extends State<OnBoardingView> {
               // !skip
               CustomNavBar(
                 onTap: () {
-                  // onBoardingVisited();
+                  onBoardingVisited();
                   customReplacementNavigate(context, "/signIn");
                 },
               ),
