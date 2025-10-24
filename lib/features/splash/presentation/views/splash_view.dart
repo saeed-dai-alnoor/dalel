@@ -16,9 +16,9 @@ class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
     bool isOnBoardingVisited =
-    getIt<CacheHelper>().getData(key: 'isOnBoardingVisited') ?? false;
+        getIt<CacheHelper>().getData(key: 'isOnBoardingVisited') ?? false;
     if (isOnBoardingVisited == true) {
-      delayedNavigate(context, '/signUp');
+      delayedNavigate(context, '/signIn');
     } else {
       delayedNavigate(context, '/onBoarding');
     }
